@@ -1,0 +1,6 @@
+{
+    "name": "root/osd-claims",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

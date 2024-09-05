@@ -16,11 +16,11 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
 
 <!-- Bootstrap Plugins -->
-<script src="<?php echo getRelativePath(); ?>assets/js/bootstrap.bundle.min.js?v=<?php echo filemtime(getRelativePath() . 'assets/js/bootstrap.bundle.min.js'); ?>"></script>
+<script src="<?php echo getRelativePath(); ?>assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom JavaScript -->
-<script src="<?php echo getRelativePath(); ?>assets/js/charts.js?v=<?php echo filemtime(getRelativePath() . 'assets/js/charts.js'); ?>"></script>
-<script src="<?php echo getRelativePath(); ?>assets/js/script.js?v=<?php echo filemtime(getRelativePath() . 'assets/js/script.js'); ?>"></script>
+<script src="<?php echo getRelativePath(); ?>assets/js/charts.js"></script>
+<script src="<?php echo getRelativePath(); ?>assets/js/script.js"></script>
 </body>
 
 </html>

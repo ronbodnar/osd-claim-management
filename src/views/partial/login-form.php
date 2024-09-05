@@ -2,11 +2,10 @@
     <div class="row d-flex flex-column flex-sm-row justify-content-center align-items-center">
         <div class="col-md-8 login-form">
             <div class="login-form-logo">
-                <img src="<?php echo getRelativePath(); ?>assets/img/header.png?v=<?php filemtime(getRelativePath() . 'assets/img/header.png'); ?>" />
+                <img src="<?php echo getRelativePath(); ?>assets/img/header.png" />
             </div>
 
-            <!--<form class="form-signin" id="loginForm" action="<?php //echo getRelativePath(); ?>src/login.php" method="POST" novalidate>-->
-            <form class="form-signin" id="loginForm" action="lololol.jpg" method="POST" novalidate>
+            <form class="form-signin" id="loginForm" method="POST" novalidate>
                 <h5 class="h5 m-4 text-center">Account Login</h5>
 
                 <div id="message" class="text-danger text-center"></div>
@@ -30,7 +29,7 @@
                 </div>
             </form>
 
-            <form class="form-signin" id="forgotPasswordForm" action="lololol.jpg" method="POST" style="display: none;" novalidate>
+            <form class="form-signin" id="forgotPasswordForm" method="POST" style="display: none;" novalidate>
                 <h5 class="text-muted m-4 text-center">Reset Password</h5>
 
                 <div id="message" class="text-danger text-center"></div>

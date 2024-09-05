@@ -1,6 +1,6 @@
 <?php
 
-require 'header.php';
+require '../header.php';
 
 $claim = $database->getClaim($_GET['id']);
 
@@ -56,8 +56,8 @@ if ($files) {
                     <div class="col text-center">
                         <div class="dropdown">
                             <?php
-                                $outlines = array('not processed' => 'danger', 'processing' => 'info', 'pending' => 'warning', 'complete' => 'success');
-                                $outline = $outlines[$claim['status']];
+                            $outlines = array('not processed' => 'danger', 'processing' => 'info', 'pending' => 'warning', 'complete' => 'success');
+                            $outline = $outlines[$claim['status']];
                             ?>
                             <button type="button" class="btn btn-outline-<?php echo $outline; ?> dropdown-toggle" id="claimStatusDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 <?php echo ucfirst($claim['status']); ?>
@@ -126,7 +126,7 @@ if ($files) {
                             $type = pathinfo($directory . '/' . $file, PATHINFO_EXTENSION);
                             $data = file_get_contents($directory . '/' . $file);
                             $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                            echo '<a href="uploads/' .$_GET["id"] . '/' . $index . '.png" style="padding-right: 20px;" target="_blank"><img src="' . $base64 . '" width="200" height="200" ></a>';
+                            echo '<a href="uploads/' . $_GET["id"] . '/' . $index . '.png" style="padding-right: 20px;" target="_blank"><img src="' . $base64 . '" width="200" height="200" ></a>';
                         }
                         ?>
                     </div>
@@ -141,7 +141,7 @@ if ($files) {
         </div>
     <?php
 } else {
-    include 'login-form.php';
+    include 'partial/login-form.php';
 } ?>
 
-    <?php include 'footer.php'; ?>
+    <?php include '../footer.php'; ?>

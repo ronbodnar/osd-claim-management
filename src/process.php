@@ -47,4 +47,4 @@ if (isset($_POST['damage'])) {
     $damageType .= 'D';
 }
 
-$database->addOSDClaim($_POST['date'], $_POST['tripNumber'], $_POST['fbNumber'], $_POST['cases'], $damageType, $productReceived, $driverId);
+$database->addOSDClaim($_POST['date'], null, $driverId, $_POST['tripNumber'], $_POST['fbNumber'], 0, 0, $_POST['cases'], $damageType, $productReceived);

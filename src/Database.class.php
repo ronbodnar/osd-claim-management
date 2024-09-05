@@ -1,6 +1,6 @@
 <?php
 
-require 'User.class.php';
+require __DIR__ . '/User.class.php';
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -13,7 +13,7 @@ class Database
     {
         try {
             // Sqlite3 Configuration
-            $this->connection = new PDO('sqlite:'.__DIR__.'/database.sqlite');
+            $this->connection = new PDO('sqlite:' . __DIR__ . '/../database.sqlite');
 
             /*
              * MySQL Configuration. DotEnv by vlucas required.
@@ -51,7 +51,7 @@ class Database
         }
     }
 
-    
+
 
     /*
      * All functions relating to users
@@ -174,8 +174,8 @@ class Database
         try {
             $statement = $this->connection->prepare(
                 ($status == 0 ?
-                'SELECT COUNT(*) FROM `claim`' :
-                'SELECT COUNT(*) FROM `claim` WHERE `status_id` = :status_id')
+                    'SELECT COUNT(*) FROM `claim`' :
+                    'SELECT COUNT(*) FROM `claim` WHERE `status_id` = :status_id')
             );
             $statement->bindParam(':status_id', $status);
             $statement->execute();
@@ -330,7 +330,8 @@ class Database
         }
     }
 
-    function getClaimsByStatusId($status) {
+    function getClaimsByStatusId($status)
+    {
         try {
             $statement = $this->connection->prepare(
                 'SELECT * FROM `claim` 
@@ -347,7 +348,8 @@ class Database
         }
     }
 
-    function getClaimsByDriverId($driver) {
+    function getClaimsByDriverId($driver)
+    {
         try {
             $statement = $this->connection->prepare(
                 'SELECT * FROM `claim` 
@@ -364,7 +366,8 @@ class Database
         }
     }
 
-    function getClaimsByFacilityId($driver) {
+    function getClaimsByFacilityId($driver)
+    {
         try {
             $statement = $this->connection->prepare(
                 'SELECT * FROM `claim` 
@@ -381,7 +384,8 @@ class Database
         }
     }
 
-    function getFacility($id) {
+    function getFacility($id)
+    {
         try {
             $statement = $this->connection->prepare(
                 'SELECT * FROM `facility` 

@@ -1,6 +1,6 @@
 <?php
 
-require 'Database.class.php';
+require __DIR__ . '/Database.class.php';
 
 $database = new Database();
 
@@ -20,12 +20,12 @@ if (strpos($action, 'list') !== false) {
         $claim['date'] = $date->format('m/d/Y');
 
         // Display link to Facility page
-        $claim['name'] = '<a href="facility?id=' . $claim['id'][3] . '" class="text-mron">' . $claim['name'] . ' / ' . $claim['city'] . '</a>';
+        $claim['name'] = '<a href="src/views/facility.php?id=' . $claim['id'][3] . '" class="text-mron">' . $claim['name'] . ' / ' . $claim['city'] . '</a>';
 
         // Display Driver name based on ID
         $driverId = $claim['driver_id'];
         $driverName = $database->getUserData($claim['driver_id'])->getFullName();
-        $claim['driver_id'] = '<a href="driver?id=' . $driverId . '" class="text-mron">' . $driverName . '</a>';
+        $claim['driver_id'] = '<a href="src/views/driver.php?id=' . $driverId . '" class="text-mron">' . $driverName . '</a>';
 
         // Format whether product was received by warehouse
         $claim['received'] = ($claim['received'] == 0 ? '<span style="color: red;"><i class="bi bi-x-lg"></i></span>' : '<span style="color: green;"><i class="bi bi-check-lg"></i></span>');

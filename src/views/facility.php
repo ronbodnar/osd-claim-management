@@ -1,6 +1,6 @@
 <?php
 
-require 'header.php';
+require '../header.php';
 
 $facility = $database->getFacility($_GET['id']);
 
@@ -85,7 +85,7 @@ $claims = $database->getClaimsByFacilityId($_GET['id']);
                                     echo '<td>' . $claim['id'][0] . '</td>';
                                     echo '<td>' . $claim['date'] . '</td>';
                                     echo '<td>' . $claim['time'] . '</td>';
-                                    echo '<td><a class="text-mron" href="driver?id=' . $claim['driver_id'] . '">' . $database->getUserData($claim['driver_id'])->getFullName() . '</a></td>';
+                                    echo '<td><a class="text-mron" href="driver.php?id=' . $claim['driver_id'] . '">' . $database->getUserData($claim['driver_id'])->getFullName() . '</a></td>';
                                     echo '<td>' . $claim['trip_number'] . '</td>';
                                     echo '<td>' . $claim['cases'] . '</td>';
                                     echo '<td>' . ucfirst($claim['type']) . '</td>';
@@ -101,7 +101,7 @@ $claims = $database->getClaimsByFacilityId($_GET['id']);
         </div>
     <?php
 } else {
-    include 'login-form.php';
+    include 'partial/login-form.php';
 } ?>
 
-    <?php include 'footer.php'; ?>
+    <?php include '../footer.php'; ?>

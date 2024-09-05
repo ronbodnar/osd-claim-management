@@ -1,10 +1,10 @@
 <?php
 
-require 'header.php';
+require '../header.php';
 
 ?>
 <?php if (!isLoggedIn()) {
-    include 'login-form.php';
+    include 'partial/login-form.php';
 } else { ?>
     <div class="container-fluid pt-4" id="default">
         <div class="overlay-inner">
@@ -135,4 +135,4 @@ require 'header.php';
     </div>
 <?php } ?>
 
-<?php include 'footer.php'; ?>
+<?php include '../footer.php'; ?>

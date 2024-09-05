@@ -2,7 +2,7 @@
 
 function isLoggedIn()
 {
-    return true;//isset($_SESSION['id']);
+    return true; //isset($_SESSION['id']);
 }
 
 function getRelativePath()
